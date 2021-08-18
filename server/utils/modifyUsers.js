@@ -1,7 +1,7 @@
 require('../users/users');
 
-exports.displayUsers = fileContent => {   
-
+exports.addUsers = fileContent => {   
+    
     const content = fileContent.split("\n");
     const data = [];
 
@@ -25,4 +25,5 @@ exports.displayUsers = fileContent => {
         }
     }
 
+    return sortedList;
 }
