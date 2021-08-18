@@ -1,6 +1,3 @@
-import '../tweets/tweets.js'
-import { loadTweets } from '../displayData/displayOutput.js'
-
 export const addTweets = fileContent => {   
     
     const content = fileContent.split("\n");
@@ -15,6 +12,7 @@ export const addTweets = fileContent => {
     })
 
     const tweets = data.sort((a, b) => a.author.localeCompare(b.author));
+
+    return tweets
     
-    loadTweets(tweets);
 }

@@ -3,12 +3,16 @@ import { addUsers }  from '../utils/modifyUsers.js';
 
 const url = "./files/users.txt";
 
-export const readUsers = fs.readFile(url, 'utf8' , (error, fileContent) => {
-    if (error) {
-      console.error(error);
-      return;
-    }
-    addUsers(fileContent);
-    
-  })
+export const readUsers = () => {
+  try {
+    const data = fs.readFileSync(url, 'utf8')
+    const users = addUsers(data);
+
+    return users;
+  
+  } catch (err) {
+    console.error(err)
+  }
+}
+
   

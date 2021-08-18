@@ -1,5 +1,3 @@
-import { loadUsers } from '../displayData/displayOutput.js'
-
 export const addUsers = fileContent => {   
     
     const content = fileContent.split("\n");
@@ -24,5 +22,6 @@ export const addUsers = fileContent => {
             })
         }
     }
-    loadUsers(users);
+
+    return users;
 }

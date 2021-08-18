@@ -1,11 +1,9 @@
-import '../users/users.js';
-import '../tweets/tweets.js';
+import { readTweets }  from '../tweets/tweets.js';
+import { readUsers } from '../users/users.js';
 
 
-export const loadUsers = data => {
-    console.log(data)
-}
-export const loadTweets = tweets => {
-    console.log(tweets)
-}
+const users = readUsers();
+const tweets = readTweets();
 
+console.log(users)
+console.log(tweets)
