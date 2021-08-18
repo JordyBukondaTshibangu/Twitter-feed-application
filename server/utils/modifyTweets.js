@@ -1,6 +1,7 @@
-require('../tweets/tweets');
+import '../tweets/tweets.js'
+import { loadTweets } from '../displayData/displayOutput.js'
 
-exports.addTweets = fileContent => {   
+export const addTweets = fileContent => {   
     
     const content = fileContent.split("\n");
     let data = [];
@@ -13,7 +14,7 @@ exports.addTweets = fileContent => {
         data.push({ author, tweets});
     })
 
-    const sortedList = data.sort((a, b) => a.author.localeCompare(b.author));
+    const tweets = data.sort((a, b) => a.author.localeCompare(b.author));
     
-    return sortedList;
+    loadTweets(tweets);
 }

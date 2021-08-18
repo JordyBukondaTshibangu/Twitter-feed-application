@@ -1,6 +1,11 @@
-require('../users/users');
-require('../tweets/tweets');
+import '../users/users.js';
+import '../tweets/tweets.js';
 
-exports.displayOutput = fileContent => {   
-   
+
+export const loadUsers = data => {
+    console.log(data)
 }
+export const loadTweets = tweets => {
+    console.log(tweets)
+}
+

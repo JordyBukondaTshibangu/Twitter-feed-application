@@ -1,6 +1,6 @@
-require('../users/users');
+import { loadUsers } from '../displayData/displayOutput.js'
 
-exports.addUsers = fileContent => {   
+export const addUsers = fileContent => {   
     
     const content = fileContent.split("\n");
     const data = [];
@@ -13,17 +13,16 @@ exports.addUsers = fileContent => {
         data.push({ name, followers});
     })
 
-    const sortedList = data.sort((a, b) => a.name.localeCompare(b.name));
+    const users = data.sort((a, b) => a.name.localeCompare(b.name));
 
-    for(let i = 0; i < sortedList.length - 1; i++){
-        const currentName = sortedList[i].name;
-        const nextName = sortedList[i + 1].name
+    for(let i = 0; i < users.length - 1; i++){
+        const currentName = users[i].name;
+        const nextName = users[i + 1].name
         if(currentName === nextName){
-            sortedList[i+1].followers.forEach(follower => {
-                sortedList[i].followers.push(follower)
+            users[i+1].followers.forEach(follower => {
+                users[i].followers.push(follower)
             })
         }
     }
-
-    return sortedList;
+    loadUsers(users);
 }
