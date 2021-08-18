@@ -14,10 +14,11 @@ module.exports.readUsers = fs.readFile(url, 'utf8' , (error, data) => {
         const items = element.split('follows');
         let name = items[0].trim();
         items.shift();
-        users.push({ name, followers : items });
+        let followers = items;
+        users.push({ name, followers});
     })
-
-    console.log(users);
     
+    // special function to display and return users
+    console.log(users)
   })
   
