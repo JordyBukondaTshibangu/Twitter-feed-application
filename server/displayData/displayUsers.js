@@ -25,5 +25,4 @@ exports.displayUsers = fileContent => {
         }
     }
 
-    console.log(sortedList)
 }
