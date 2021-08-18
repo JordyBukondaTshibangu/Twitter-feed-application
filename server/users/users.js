@@ -1,10 +1,10 @@
 const fs = require('fs');
 const url = "./files/users.txt";
 
-module.exports.readUsers = fs.readFile(url, 'utf8' , (err, data) => {
-    if (err) {
-      console.error(err)
-      return
+module.exports.readUsers = fs.readFile(url, 'utf8' , (error, data) => {
+    if (error) {
+      console.error(error);
+      return;
     }
 
     const users = [];
@@ -14,10 +14,10 @@ module.exports.readUsers = fs.readFile(url, 'utf8' , (err, data) => {
         const items = element.split('follows');
         let name = items[0].trim();
         items.shift();
-        users.push({ name, followers : items })
+        users.push({ name, followers : items });
     })
 
-    console.log(users)
+    console.log(users);
     
   })
   
