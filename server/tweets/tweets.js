@@ -19,6 +19,6 @@ module.exports.readTweets = fs.readFile(url, 'utf8' , (error, data) => {
     })
     
     // special function to display and return tweets
-    console.log(tweets)
+    // console.log(tweets)
   })
   
