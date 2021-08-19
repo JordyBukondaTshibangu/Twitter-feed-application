@@ -8,10 +8,11 @@ export const addTweets = fileContent => {
         let author = items[0].trim();
         items.shift();
         let tweets = items.map(user => user.trim())[0]
-        data.push({ author, tweets});
+        data.push({ author, content : tweets});
     })
 
     const tweets = data.sort((a, b) => a.author.localeCompare(b.author));
+    tweets.shift()
 
     return tweets
     
