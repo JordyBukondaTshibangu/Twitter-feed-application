@@ -5,9 +5,11 @@ const Feed = ({ follower }) => {
 
     return (
         <div>
-            <h4>@{author}</h4>
             <hr></hr>
+            <h4>@{author}</h4>
             <p>{content}</p>
+            <hr></hr>
+            <br></br>
         </div>
     )
 }

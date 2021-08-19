@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react'
 import Feed from '../components/Feed'
-import { userData } from '../data';
+import { userData } from '../data/data';
 
 const HomePage = () => {
     const [ data, setData ] = useState();
