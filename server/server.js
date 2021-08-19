@@ -8,7 +8,6 @@ const server = http.createServer((req, res) => {
   res.statusCode = 200;
 });
 
-// to display the data call the following function
 outputData();
 
 server.listen(port, hostname, () => {
