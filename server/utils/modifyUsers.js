@@ -1,9 +1,9 @@
 export const addUsers = fileContent => {   
     try {
-        
+
         if(!fileContent){
-            return new Error("The file is empty");
-            ;
+            console.log("THE FILE CONTENT WAS NOT RECEIVED");
+            return new Error()
         }
 
         const content = fileContent.split("\n");
@@ -24,14 +24,16 @@ export const addUsers = fileContent => {
             const currentName = users[i].name;
             const nextName = users[i + 1].name
     
-            if(currentName === nextName){
+            if(currentName === nextName && nextName ){
                 users[i].followers.forEach(follower => { 
                     users[i + 1].followers.reverse().push(follower.trim()) 
                 })
             }
         }
+        users.shift();
         return users;
+        
     } catch(error){
-        throw new Error(error.message)
+        throw new Error(error.message);
     }
 }
