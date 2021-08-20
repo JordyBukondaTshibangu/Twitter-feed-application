@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react'
-import { users } from '../data/data';
+import { users } from '../data/data'
+import UserAvatar from '../assets/UserAvatar.png'
 
 const UsersPage = () => {
     const [ data, setData ] = useState();
@@ -9,26 +10,30 @@ const UsersPage = () => {
     },[])
     
     return (
-        <div className="home-page">
-            <div className="home-body">
-                {
-                    data?.map((userData,index) => (
-                        <div className="user-content" key={index}>
-                            <br></br>
-                            <div className="user">
-                                <h3>{ userData.name }</h3>
+        <div className="user-page">
+            {
+                data?.map((userData,index) => (
+                    <div className="user-info" key={index}>
+                        <div className="user">
+                            <div className="img-container">
+                                <img src={UserAvatar} alt="/"/>
                             </div>
-                            <br></br>
-                            <div className="followers">
-                                {
-                                    userData.followers?.map((follower, id) => <div key={id}> {follower} </div>)
-                                }
-                                <br></br>
-                            </div>
+                            <h3>{ userData.name }</h3>
                         </div>
-                    ))
-                }
-            </div>
+                        <div className="followers">
+                            {
+                                userData.followers?.map((follower, id) => (
+                                    <ul key={id}>
+                                        <li className="user-follower">
+                                            {follower}
+                                        </li>
+                                    </ul>
+                                ))
+                            }
+                        </div>
+                    </div>
+                ))
+            }
         </div>
     )
 }

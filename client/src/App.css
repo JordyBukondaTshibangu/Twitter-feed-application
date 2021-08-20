@@ -3,3 +3,153 @@
     margin: 0;
     padding: 0;
 }
+.App {
+    display: grid;
+    grid-template-rows: .2fr 5fr;
+}
+.nav-bar {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    position : sticky;
+    top : 0;
+    z-index : 10;
+    font-size : 1rem;
+}
+.nav-logo {
+    border-radius: 100%;
+    margin: .5rem;
+    padding: .6rem;
+    cursor: pointer;
+    align-items : center;
+}
+.nav-logo img{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+}
+.search-bar {
+    background-color: #fff;
+    display: none;
+}
+.nav-items ul {
+    display: flex;
+    padding-left: 1rem;
+    list-style: none;
+    display : flex;
+    align-items : center;
+    text-align : center;
+    background-color: #000;
+    color: #fff;
+}
+.nav-items ul li {
+    margin-left: 1rem;
+    text-decoration: none;
+}
+.nav-items ul li a {
+    background-color: #000;
+    color: #fff;
+     display : flex;
+     align-items : center;
+     text-decoration : none;
+     padding : 0 1rem;
+     height : 100%;
+     cursor: pointer;
+     font-weight: 500;
+}
+.nav-items ul li a:hover {
+    text-decoration : underline;
+    color : #5adeff;
+}
+
+
+.home-page {
+    padding: .5rem;
+}
+.home-page .user-content {
+    display: grid;
+    grid-template-columns: .8fr 4fr;
+    margin-top: 2rem;
+    padding: .5rem;
+    margin-bottom : 50px;
+}
+.home-page .user-content .user {
+    text-align: center;
+    padding: 5px;
+}
+.home-page .user-content .user h3 {
+    padding: 10px;
+    font-family: Blippo, fantasy;
+    letter-spacing: 2px; 
+}
+.home-page .user-content .user img{
+    width: 9rem;
+    height: 6rem;
+}
+.home-page .user-content .followers {
+    background-color: #eee;
+    
+}
+.home-page .user-content .followers .follower-tweet{
+    margin: 10px;
+    margin-bottom: 20px;
+    padding: 1rem;
+    box-shadow : 0 0 10px 0 rgba(0,0,0,0.3);
+}
+.followers .follower-tweet h4 {
+    font-size: 14px;
+    font-family: Blippo, fantasy;
+    letter-spacing: 2px; 
+}
+.followers .follower-tweet p {
+    margin-top: .5rem;
+    font-size: 12px;
+    font-family: Blippo, fantasy;
+    letter-spacing: 2px; 
+}
+
+
+.user-page {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 2rem;
+
+}
+.user-page .user-info {
+    margin: .7rem;
+    box-shadow : 0 0 10px 0 rgba(0,0,0,0.3);
+    text-align: center;
+}
+.user-page .user-info .user {
+    width: 100%;
+}
+.user-page .user-info .user .img-container {
+    margin-top: -15px;
+    margin-bottom: 1rem;
+}
+.user-page .user-info .user .img-container img{
+    width: 100%;
+    height: 100%;
+}
+.user-page .user-info .user h3{
+    padding: 16px;
+    font-family: Blippo, fantasy;
+    letter-spacing: 2px; 
+}
+
+.user-page .user-info .followers ul {
+    text-align : center;
+    color: #fff;
+}
+.user-page .user-info .followers ul li {
+    list-style: none;
+    color: #000;
+    text-decoration : none;
+    margin-top: .5rem;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: Blippo, fantasy;
+    letter-spacing: 2px; 
+}

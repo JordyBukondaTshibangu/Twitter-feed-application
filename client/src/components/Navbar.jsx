@@ -7,7 +7,9 @@ const Navbar = () => {
     return (
         <>
             <div className="nav-logo">
-                <img src={TwitterFeedLogo} alt="/" />
+                <Link to="/">
+                    <img src={TwitterFeedLogo} alt="/" />
+                </Link>
             </div>
             <div className="search-bar">
                 <input type="text" placeholder="enter user name"/>

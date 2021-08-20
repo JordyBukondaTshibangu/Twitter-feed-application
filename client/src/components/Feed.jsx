@@ -4,12 +4,9 @@ const Feed = ({ follower }) => {
     const { author, content } = follower;
 
     return (
-        <div>
-            <hr></hr>
+        <div className="follower-tweet">
             <h4>@{author}</h4>
             <p>{content}</p>
-            <hr></hr>
-            <br></br>
         </div>
     )
 }
