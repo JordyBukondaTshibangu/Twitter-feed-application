@@ -30,7 +30,7 @@ export const addUsers = fileContent => {
                 })
             }
         }
-        users.shift();
+        // users.shift();
         return users;
         
     } catch(error){

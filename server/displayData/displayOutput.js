@@ -23,19 +23,16 @@ const outputData = () => {
                 let userFollower = user.followers[j].trim().toLowerCase();
         
                 tweets.filter(tweet => {
-        
                     if(tweet.author.toLowerCase().trim() == userFollower){
-                        
                         string += `\t\t @${userFollower} : ${tweet.content}\n`
                         return {
                             author : userFollower,
                             content : tweet.content
                         }
-                    }
+                    } 
                 })
-        
             }
-            console.log(string)
+            console.log(string)            
         }
     } catch(err){
         console.log(err.message)
