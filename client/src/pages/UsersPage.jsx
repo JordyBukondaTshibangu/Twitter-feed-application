@@ -1,18 +1,23 @@
 import React, { useState, useEffect} from 'react'
-import { users } from '../data/data'
+import axios from 'axios'
 import UserAvatar from '../assets/UserAvatar.png'
 
 const UsersPage = () => {
-    const [ data, setData ] = useState();
+    const [ userDataCollection, setData ] = useState();
 
     useEffect(() => {
-        setData(users());
+        async function fetchData(){
+            let response = await axios.get('http://localhost:5000/twitter-app/users')
+            let { data : { users} } = response
+            setData(users)
+        }
+        fetchData()
     },[])
     
     return (
         <div className="user-page">
             {
-                data?.map((userData,index) => (
+                userDataCollection?.map((userData,index) => (
                     <div className="user-info" key={index}>
                         <div className="user">
                             <div className="img-container">
