@@ -15,7 +15,6 @@ Simple Node Js console application with an API endpoint created using Node.JS, E
 
 * Node.js
 * Express.js
-* MongoDB
 * React.js
 
 ### Perequisite
@@ -34,8 +33,6 @@ Bellow are the links to help you installing it:
 * npm run server (To Launch the console app)
 
 * npm run dev (To launch the fullstack app) 
-
-
 
 
 
