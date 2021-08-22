@@ -38,28 +38,37 @@ Bellow are the links to help you installing it:
 APP STRUCTURE AND KEY POINTS
 
 
-- [x] API ==> Server
+- [x] Server ==> Server
 			
 In the server we import 
+
+
     1.  express (The framework on which will be built the app)
 
 - [x] Database  => File System
+
+
     * Import fs from Node runtime environment 
 
-- [x] API ==> Models
+
+
+- [x] Server ==> Models
 
 We have : 
+
     * User 
     * Tweet 
     * User_Feed (user + followers_feed)
 
 
-- [x] API ==> Routes
+- [x] Server ==> Routes
 
 The routes are : 
+
     1. GET USERS  ==>  GET ==> /twitter-app/users
     2. GET TWEETS  ==>  GET ==> /twitter-app/feeds
     3. 404 NOT FOUND
+    
 
 - [x] MIDDLEWARE ==> OUTPUT THE DATA IN THE CONSOLE
 
