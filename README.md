@@ -28,10 +28,14 @@ Bellow are the links to help you installing it:
 ### Launch
 
 * git clone 
-* cd 
+* cd Twitter-feed-application
+* cd server
 * npm install 
 * npm run server (To Launch the console app)
-* npm run dev (To run the fullstack app)
+
+* npm run dev (To launch the fullstack app) 
+
+
 
 
 
