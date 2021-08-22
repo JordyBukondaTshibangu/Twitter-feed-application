@@ -1,11 +1,13 @@
 import React, { useState, useEffect} from 'react'
 import axios from 'axios'
-import Feed from '../components/Feed'
+import Loader from '../components/Loader'
 import { usersAndFeed } from '../utils/data'
 import UserAvatar from '../assets/UserAvatar.png'
+import FeedList from '../components/FeedList'
 
 const HomePage = () => {
     const [ dataFeed, setData ] = useState()
+    const [ loading, setLoading ] = useState(true)
 
     useEffect( () => {
         async function fetchData(){
@@ -16,6 +18,7 @@ const HomePage = () => {
             let { data : { tweets} } = responseTwo
             let usersFeed = usersAndFeed(users, tweets)
             setData(usersFeed)
+            setLoading(false)
         }
         fetchData()
         
@@ -24,6 +27,7 @@ const HomePage = () => {
     return (
         <div className="home-page">
             {
+                loading ? <Loader /> : 
                 dataFeed?.map((userData,index) => (
                     <div className="user-content" key={index}>
                         <div className="user">
@@ -32,7 +36,7 @@ const HomePage = () => {
                         </div>
                         <div className="followers">
                             {
-                                userData.followers?.map((follower, id) => <Feed key={id} follower={follower} />)
+                                userData.followers?.map((follower, id) => <FeedList key={id} followers={follower} />)
                             }
                         </div>
                     </div>
